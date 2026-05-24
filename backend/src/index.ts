@@ -25,6 +25,8 @@ import { getSettings, updateSettings } from './controllers/settings.controller.j
 const app = express();
 const server = createServer(app);
 
+app.set('trust proxy', 1);
+
 app.use(helmet());
 app.use(
   cors({
