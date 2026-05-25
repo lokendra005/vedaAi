@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --bg-gradient-start: #eeeeee;
+  --bg-gradient-end: #dadada;
+  --primary: #ff5623;
+  --primary-dark: #c0350a;
+  --text-primary: #303030;
+  --text-secondary: rgba(48, 48, 48, 0.8);
+  --text-muted: rgba(48, 48, 48, 0.55);
+  --bg-dark: #181818;
+  --bg-off-white: #f6f6f6;
+  --border: #dadada;
+  --success: #4bc26d;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-off-white: var(--bg-off-white);
+  --color-border: var(--border);
+  --color-success: var(--success);
+}
+
+@utility font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+@utility font-body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:active {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-off-white);
+  min-height: 100%;
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+.surface-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(146, 146, 146, 0.08);
+}
+
+.glass-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(146, 146, 146, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white;
+    overflow: visible;
+  }
+}
